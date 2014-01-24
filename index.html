@@ -6,6 +6,12 @@
 </head>
 <body>
 	<script src="http://js.pusher.com/2.1/pusher.min.js"></script>
-	<script src="http://mighty-escarpment-2260.herokuapp.com/app.js"></script>
+	<script>
+	var pusher = new Pusher('64386');
+	var channel = pusher.subscribe('my-channel');
+	channel.bind('my-event', function(data) {
+		alert('An event was triggered with message: ' + data.message);
+	});
+	</script>
 </body>
 </html>
