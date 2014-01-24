@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "express": "~3.4.8",
-    "logfmt": "~0.18.1"
+    "logfmt": "~0.18.1",
+    "pusher": "~0.1.3"
   }
 }
