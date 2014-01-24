@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/KraigWalker/pushertest",
   "engines": {
-    "node": "0.12.x"
+    "node": "0.10.25"
+  },
+  "devDependencies": {
+    "express": "~3.4.8",
+    "logfmt": "~0.18.1"
   }
 }
