@@ -16,6 +16,7 @@ app.get('/', function(req, res) {
   res.sendfile('index.html');
 
   pusher.trigger('my-channel', 'my-event', {"message": "hello world"});
+  console.log("hello!");
 });
 
 var port = Number(process.env.PORT || 5000);
