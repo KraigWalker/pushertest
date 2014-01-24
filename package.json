@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/KraigWalker/pushertest/issues"
   },
-  "homepage": "https://github.com/KraigWalker/pushertest"
+  "homepage": "https://github.com/KraigWalker/pushertest",
+  "engines": {
+    "node": "0.12.x"
+  }
 }
