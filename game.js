@@ -23,6 +23,11 @@ function init() {
 	// Set up Socket.IO to listen on port 8000
 	var port = process.env.PORT || 5000;
 	socket = io.listen(port);
+	var app = require('http').createServer(function() {
+		console.log("server started");
+	});
+		io.listen(app);
+		io.set('log level', 2);
 
 	socket.configure(function() {
 		// Only use WebSockets
