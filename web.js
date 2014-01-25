@@ -19,7 +19,7 @@ app.post( '/pusher/auth', function( req, res ) {
     user_id: 'unique_user_id',
     user_info: {
       name: 'Mr Pusher',
-      twitter_id: '@pusher'
+      twitter_id: '@Kraig_Walker'
     }
   };
   var auth = pusher.auth( socketId, channel, presenceData );
