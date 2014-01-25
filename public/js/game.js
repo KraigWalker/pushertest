@@ -23,6 +23,7 @@ function init() {
 	circle.graphics.beginFill("red").drawCircle(0, 0, 50);
 	circle.x = 100;
 	circle.y = 100;
+	circle.addEventListener("click", function(event) { alert("clicked"); });
 	stage.addChild(circle);
 
 	// Maximise the canvas
