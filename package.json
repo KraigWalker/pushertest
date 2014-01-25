@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "express": "latest",
-    "socket.io": "latest",
+    "socket.io": "latest"
   }
 }
