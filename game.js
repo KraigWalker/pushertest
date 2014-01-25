@@ -21,7 +21,7 @@ function init() {
 	players = [];
 
 	// Set up Socket.IO to listen on port 8000
-	socket = io.listen(8000);
+	socket = io.listen(process.env.PORT || 8000);
 
 	// Configure Socket.IO
 	socket.configure(function() {
@@ -117,7 +117,6 @@ function onMovePlayer(data) {
 	this.broadcast.emit("move player", {id: movePlayer.id, x: movePlayer.getX(), y: movePlayer.getY()});
 }
 
-
 /**************************************************
 ** GAME HELPER FUNCTIONS
 **************************************************/
@@ -131,7 +130,6 @@ function playerById(id) {
 
 	return false;
 }
-
 
 /**************************************************
 ** RUN THE GAME
