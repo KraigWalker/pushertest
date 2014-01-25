@@ -22,6 +22,7 @@ app.get('/', function(req, res){
 **************************************************/
 var players;	// Array of connected players
 var server = app.listen(PORT);
+server.use(express.static('/public'));
 
 /**************************************************
 ** GAME INITIALISATION
