@@ -8,6 +8,9 @@ var canvas,			// Canvas DOM element
 	remotePlayers,	// Remote players
 	socket;			// Socket connection
 
+	var stage = new createjs.Stage("gameCanvas");
+	var circle = new createjs.Shape();
+
 /**************************************************
 ** GAME INITIALISATION
 **************************************************/
@@ -15,6 +18,12 @@ function init() {
 	// Declare the canvas and rendering context
 	canvas = document.getElementById("gameCanvas");
 	ctx = canvas.getContext("2d");
+
+	// CreateJS Getting Started
+	circle.graphics.beginFill("red").drawCircle(0, 0, 50);
+	circle.x = 100;
+	circle.y = 100;
+	stage.addChild(circle);
 
 	// Maximise the canvas
 	canvas.width = window.innerWidth;
@@ -172,6 +181,8 @@ function update() {
 function draw() {
 	// Wipe the canvas clean
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	stage.update();
 
 	// Draw the local player
 	localPlayer.draw(ctx);
