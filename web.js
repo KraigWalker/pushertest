@@ -12,12 +12,15 @@ var pusher = new Pusher({
 
 app.use(logfmt.requestLogger());
 
+var channel = pusher.subscribe('my-channel');
+
 app.get('/', function(req, res) {
   res.sendfile('index.html');
-  setInterval(function() {
-	pusher.trigger('my-channel', 'my-event', {"message": "hello world"});
-	console.log("hello! world!");
-  }, 5000);
+  // listen for update-slider event
+  channel.bind('update-slider', function(data){
+	// log the recieved value
+	console.log('current value ' + data.value);
+  });
 
 });
 
