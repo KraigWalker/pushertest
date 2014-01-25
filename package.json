@@ -1,29 +1,9 @@
 {
-  "name": "pushertest",
-  "version": "0.0.0",
-  "description": "A simple test to make sure I know how Pusher/Heroku work",
-  "main": "web.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KraigWalker/pushertest.git"
-  },
-  "keywords": [
-    "pusher"
-  ],
-  "author": "Kraig Walker",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/KraigWalker/pushertest/issues"
-  },
-  "homepage": "https://github.com/KraigWalker/pushertest",
-  "engines": {
-    "node": "0.10.25"
-  },
-  "devDependencies": {
-    "express": "latest",
-    "socket.io": "latest"
-  }
+	"name": "ggj-server",
+	"version": "0.0.0",
+	"author": "Dave Sapien & Kraig Walker",
+	"description": "A server for running our emotional shape game",
+	"dependencies": {
+		"socket.io": "latest"
+	}
 }
