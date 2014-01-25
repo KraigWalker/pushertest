@@ -15,6 +15,6 @@ channel.bind('pusher:subscription_error', function() {
 
 // send a message with the amount to the server
 function updateSlider() {
-	channel.trigger("client-update-slider", { value:45 });
+	channel.trigger("presence-update-slider", { value:45 });
 	console.log("event sent");
 }
