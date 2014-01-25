@@ -4,8 +4,6 @@
   "author": "Dave Sapien & Kraig Walker",
   "description": "A server for running our emotional shape game",
   "dependencies": {
-    "socket.io": "latest",
-    "util": "latest",
-    "express": "~3.4.8"
+    "socket.io": "latest"
   }
 }
