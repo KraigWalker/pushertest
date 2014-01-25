@@ -21,8 +21,9 @@ pusher.bind('update-slider', function(data){
 
 app.get('/', function(req, res) {
   res.sendfile('index.html');
-  // listen for update-slider event
-
+});
+app.get('/js/app.js', function(req, res) {
+	res.sendfile('js/app.js');
 });
 
 var port = Number(process.env.PORT || 5000);
