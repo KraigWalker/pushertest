@@ -17,7 +17,7 @@ app.get('/', function(req, res) {
   setInterval(function() {
 	pusher.trigger('my-channel', 'my-event', {"message": "hello world"});
 	console.log("hello! world!");
-  }, delay,5000);
+  }, 5000);
 
 });
 
