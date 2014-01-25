@@ -1,15 +1,13 @@
 var express = require('express'),
-http = require('http');
+http = require('http'),
+cors = require('cors');
 
 var app = express(),
- server = http.createServer(app),
-  io = require('socket.io').listen(server);
+server = http.createServer(app),
+io = require('socket.io').listen(server);
 
-  app.all('/*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-  });
+  app.use(cors());
+  app.use(app.router);
 
 server.listen(process.env.PORT || 5000);
 
