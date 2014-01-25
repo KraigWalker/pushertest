@@ -1,12 +1,10 @@
 /**************************************************
 ** NODE.JS REQUIREMENTS
 **************************************************/
-var util = require("util");			// Utility resources (logging, object inspection, etc)
-var express = require('express'),
-app = express(),
- server = require('http').createServer(app),
+var util = require("util"),					// Utility resources (logging, object inspection, etc)
 	io = require("socket.io"),				// Socket.IO
 	Player = require("./Player").Player;	// Player class
+
 
 /**************************************************
 ** GAME VARIABLES
@@ -23,8 +21,16 @@ function init() {
 	players = [];
 
 	// Set up Socket.IO to listen on port 8000
-	var port = process.env.PORT || 5000;
-	socket = io.listen(server);
+	socket = io.listen(process.env.PORT || 8000);
+
+	// Configure Socket.IO
+	socket.configure(function() {
+		// Only use WebSockets
+		socket.set("transports", ["websocket"]);
+
+		// Restrict log output
+		socket.set("log level", 2);
+	});
 
 	// Start listening for events
 	setEventHandlers();
@@ -111,6 +117,7 @@ function onMovePlayer(data) {
 	this.broadcast.emit("move player", {id: movePlayer.id, x: movePlayer.getX(), y: movePlayer.getY()});
 }
 
+
 /**************************************************
 ** GAME HELPER FUNCTIONS
 **************************************************/
@@ -124,6 +131,7 @@ function playerById(id) {
 
 	return false;
 }
+
 
 /**************************************************
 ** RUN THE GAME

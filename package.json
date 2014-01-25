@@ -5,10 +5,7 @@
   "description": "A server for running our emotional shape game",
   "dependencies": {
     "socket.io": "latest",
-    "util": "latest"
-  },
-  "devDependencies": {
-    "express": "~3.4.8",
-    "http": "0.0.0"
+    "util": "latest",
+    "express": "~3.4.8"
   }
 }
