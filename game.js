@@ -17,12 +17,11 @@ app.get('/', function(req, res){
 	res.sendfile(__dirname + '/index.html');
 });
 
-
 /**************************************************
 ** GAME VARIABLES
 **************************************************/
 var players;	// Array of connected players
-var server = http.createServer(app);
+var server = app.listen(PORT);
 
 /**************************************************
 ** GAME INITIALISATION
@@ -47,7 +46,6 @@ function init() {
 	// Start listening for events
 	setEventHandlers();
 }
-
 
 /**************************************************
 ** GAME EVENT HANDLERS
@@ -129,7 +127,6 @@ function onMovePlayer(data) {
 	this.broadcast.emit("move player", {id: movePlayer.id, x: movePlayer.getX(), y: movePlayer.getY()});
 }
 
-
 /**************************************************
 ** GAME HELPER FUNCTIONS
 **************************************************/
@@ -143,7 +140,6 @@ function playerById(id) {
 
 	return false;
 }
-
 
 /**************************************************
 ** RUN THE GAME
