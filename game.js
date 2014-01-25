@@ -1,35 +1,47 @@
 /**************************************************
 ** NODE.JS REQUIREMENTS
 **************************************************/
-var util = require("util"),					// Utility resources (logging, object inspection, etc)
-	io = require("socket.io"),				// Socket.IO
-	Player = require("./Player").Player;	// Player class
+var PORT = process.env.PORT || 8080,
+	HOST = process.env.HOST || 'localhost';
+
+var	io = require("socket.io");		// Socket.IO
+var express = require('express');	// Express 3
+var http = require('http');			// node http
+var util = require("util");			// Utility resources (logging, object inspection, etc)
+var Player = require("./Player").Player;	// Player class
+
+var app = express();
+
+// configure routes
+app.get('/', function(req, res){
+	res.sendfile(__dirname + '/index.html');
+});
 
 
 /**************************************************
 ** GAME VARIABLES
 **************************************************/
-var socket,		// Socket controller
-	players;	// Array of connected players
-
+var players;	// Array of connected players
+var server = http.createServer(app);
 
 /**************************************************
 ** GAME INITIALISATION
 **************************************************/
 function init() {
+	console.log("starting");
 	// Create an empty array to store players
 	players = [];
 
 	// Set up Socket.IO to listen on port 8000
-	socket = io.listen(process.env.PORT || 8000);
+	io = io.listen(server);
 
 	// Configure Socket.IO
-	socket.configure(function() {
+	io.configure(function() {
 		// Only use WebSockets
-		socket.set("transports", ["websocket"]);
+		io.set("transports", ["websocket"]);
 
 		// Restrict log output
-		socket.set("log level", 2);
+		io.set("log level", 2);
 	});
 
 	// Start listening for events
@@ -42,7 +54,7 @@ function init() {
 **************************************************/
 var setEventHandlers = function() {
 	// Socket.IO
-	socket.sockets.on("connection", onSocketConnection);
+	io.sockets.on("connection", onSocketConnection);
 };
 
 // New socket connection
