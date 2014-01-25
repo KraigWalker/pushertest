@@ -7,7 +7,6 @@ server = http.createServer(app),
 io = require('socket.io').listen(server);
 
   app.use(cors());
-  app.use(app.router);
 
 server.listen(process.env.PORT || 5000);
 
