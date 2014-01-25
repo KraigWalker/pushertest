@@ -8,7 +8,6 @@ var canvas,			// Canvas DOM element
 	remotePlayers,	// Remote players
 	socket;			// Socket connection
 
-
 /**************************************************
 ** GAME INITIALISATION
 **************************************************/
@@ -42,7 +41,6 @@ function init() {
 	// Start listening for events
 	setEventHandlers();
 }
-
 
 /**************************************************
 ** GAME EVENT HANDLERS
@@ -146,7 +144,6 @@ function onRemovePlayer(data) {
 	remotePlayers.splice(remotePlayers.indexOf(removePlayer), 1);
 }
 
-
 /**************************************************
 ** GAME ANIMATION LOOP
 **************************************************/
@@ -158,7 +155,6 @@ function animate() {
 	window.requestAnimFrame(animate);
 }
 
-
 /**************************************************
 ** GAME UPDATE
 **************************************************/
@@ -169,7 +165,6 @@ function update() {
 		socket.emit("move player", {x: localPlayer.getX(), y: localPlayer.getY()});
 	}
 }
-
 
 /**************************************************
 ** GAME DRAW
@@ -187,7 +182,6 @@ function draw() {
 		remotePlayers[i].draw(ctx);
 	}
 }
-
 
 /**************************************************
 ** GAME HELPER FUNCTIONS

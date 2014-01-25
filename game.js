@@ -4,7 +4,10 @@
 var util = require("util"),					// Utility resources (logging, object inspection, etc)
 	io = require("socket.io"),				// Socket.IO
 	Player = require("./Player").Player;	// Player class
-
+var http = require('http');
+var httpServer = http.createServer(function() {
+		console.log("server started");
+	});
 
 /**************************************************
 ** GAME VARIABLES
@@ -22,17 +25,12 @@ function init() {
 
 	// Set up Socket.IO to listen on port 8000
 	var port = process.env.PORT || 5000;
-	socket = io.listen(port);
-	var app = require('http').createServer(function() {
-		console.log("server started");
-	});
-		io.listen(app);
-		io.set('log level', 2);
+	socket = io.listen(httpServer);
 
 	socket.configure(function() {
 		// Only use WebSockets
-		io.set("transports", ["xhr-polling"]);
-		io.set("polling duration", 10);
+		socket.set("transports", ["xhr-polling"]);
+		socket.set("polling duration", 10);
 
 		// Restrict log output
 		socket.set("log level", 2);
