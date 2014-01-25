@@ -23,8 +23,9 @@
     "node": "0.10.25"
   },
   "devDependencies": {
+    "opentok": "0.3.x",
     "express": "~3.4.8",
     "logfmt": "~0.18.1",
-    "pusher-client": "~0.2.1"
+    "socket.io": "latest"
   }
 }
