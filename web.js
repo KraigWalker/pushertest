@@ -11,7 +11,6 @@ var enableCORS = function(req, res, next) {
 };
 
 app.use(enableCORS);
-server.listen(process.env.PORT || 5000);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
@@ -24,3 +23,5 @@ io.sockets.on('connection', function (socket) {
     console.log(data);
   });
 });
+
+server.listen(process.env.PORT || 5000);
