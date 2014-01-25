@@ -1,13 +1,12 @@
 /**************************************************
 ** NODE.JS REQUIREMENTS
 **************************************************/
-var util = require("util"),					// Utility resources (logging, object inspection, etc)
+var util = require("util");			// Utility resources (logging, object inspection, etc)
+var express = require('express'),
+app = express(),
+ server = require('http').createServer(app),
 	io = require("socket.io"),				// Socket.IO
 	Player = require("./Player").Player;	// Player class
-var http = require('http');
-var httpServer = http.createServer(function() {
-		console.log("server started");
-	});
 
 /**************************************************
 ** GAME VARIABLES
@@ -25,16 +24,7 @@ function init() {
 
 	// Set up Socket.IO to listen on port 8000
 	var port = process.env.PORT || 5000;
-	socket = io.listen(httpServer);
-
-	socket.configure(function() {
-		// Only use WebSockets
-		socket.set("transports", ["xhr-polling"]);
-		socket.set("polling duration", 10);
-
-		// Restrict log output
-		socket.set("log level", 2);
-	});
+	socket = io.listen(server);
 
 	// Start listening for events
 	setEventHandlers();

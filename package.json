@@ -1,10 +1,14 @@
 {
-	"name": "ggj-server",
-	"version": "0.0.0",
-	"author": "Dave Sapien & Kraig Walker",
-	"description": "A server for running our emotional shape game",
-	"dependencies": {
-		"socket.io": "latest",
-		"util": "latest"
-	}
+  "name": "ggj-server",
+  "version": "0.0.0",
+  "author": "Dave Sapien & Kraig Walker",
+  "description": "A server for running our emotional shape game",
+  "dependencies": {
+    "socket.io": "latest",
+    "util": "latest"
+  },
+  "devDependencies": {
+    "express": "~3.4.8",
+    "http": "0.0.0"
+  }
 }
