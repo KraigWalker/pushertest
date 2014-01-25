@@ -12,9 +12,9 @@ var pusher = new Pusher({
 
 app.use(logfmt.requestLogger());
 
-var channel = pusher.subscribe('my-channel');
+var channel = pusher.subscribe('presence-my-channel');
 
-pusher.bind('update-slider', function(data){
+pusher.bind('client-update-slider', function(data){
 	// log the recieved value
 	console.log('current value ' + data.value);
 });
