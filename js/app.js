@@ -10,7 +10,7 @@ channel.bind('pusher:subscription_succeeded', function() {
 });
 // handle error
 channel.bind('pusher:subscription_error', function() {
-	alert("subscription successful!");
+	alert("subscription error!");
 });
 
 // send a message with the amount to the server
