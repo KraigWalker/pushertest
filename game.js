@@ -14,7 +14,7 @@ var app = express();
 
 // configure routes
 app.get('/', function(req, res){
-	res.sendfile('/index.html');
+	res.sendfile('public/index.html');
 });
 
 /**************************************************
