@@ -10,17 +10,15 @@ var pusher = new Pusher({
   secret: '2fe4afb1303c2e2f88f2'
 });
 
-function sendMessage(){
-	pusher.trigger('my-channel', 'my-event', {"message": "hello world"});
-}
-
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
   res.sendfile('index.html');
-  setInterval(sendMessage,8);
+  setInterval(function() {
+	pusher.trigger('my-channel', 'my-event', {"message": "hello world"});
+	console.log("hello! world!");
+  }, delay,5000);
 
-  console.log("hello!");
 });
 
 var port = Number(process.env.PORT || 5000);
