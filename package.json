@@ -23,6 +23,7 @@
     "node": "0.10.25"
   },
   "devDependencies": {
+    "http": "latest",
     "express": "latest",
     "socket.io": "latest"
   }
