@@ -33,7 +33,7 @@ function init() {
 	localPlayer = new Player(startX, startY);
 
 	// Initialise socket connection
-	socket = io.connect("http://mighty-escarpment-2260.herokuapp.com/", {port: 8000, transports: ["websocket"]});
+	socket = io.connect("http://mighty-escarpment-2260.herokuapp.com/", {transports: ["websocket"]});
 
 	// Initialise remote players array
 	remotePlayers = [];
