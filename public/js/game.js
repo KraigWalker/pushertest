@@ -23,7 +23,11 @@ function init() {
 	circle.graphics.beginFill("red").drawCircle(0, 0, 50);
 	circle.x = 100;
 	circle.y = 100;
-	circle.addEventListener("click", function(event) { alert("clicked"); });
+	circle.addEventListener("click", function(event) {
+	//using HTML5 for fullscreen (only newest Chrome + FF)
+	$("#gameCanvas")[0].webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT); //Chrome
+	$("#gameCanvas")[0].mozRequestFullScreen(); //Firefox
+	});
 	stage.addChild(circle);
 
 	// Maximise the canvas
