@@ -14,13 +14,14 @@ app.use(logfmt.requestLogger());
 
 var channel = pusher.subscribe('my-channel');
 
+channel.bind('update-slider', function(data){
+	// log the recieved value
+	console.log('current value ' + data.value);
+});
+
 app.get('/', function(req, res) {
   res.sendfile('index.html');
   // listen for update-slider event
-  channel.bind('update-slider', function(data){
-	// log the recieved value
-	console.log('current value ' + data.value);
-  });
 
 });
 
