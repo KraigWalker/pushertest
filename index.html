@@ -8,7 +8,7 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
 		console.log("hiya");
-	  var socket = io.connect('http://localhost');
+	  var socket = io.connect('http://mighty-escarpment-2260.herokuapp.com/');
 	  socket.on('news', function (data) {
 	    console.log(data);
 	    socket.emit('my other event', { my: 'data' });
