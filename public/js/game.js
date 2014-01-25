@@ -25,8 +25,8 @@ function init() {
 	circle.y = 100;
 	circle.addEventListener("click", function(event) {
 	//using HTML5 for fullscreen (only newest Chrome + FF)
-	$("#gameCanvas")[0].webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT); //Chrome
-	$("#gameCanvas")[0].mozRequestFullScreen(); //Firefox
+	document.getElementById("gameCanvas")[0].webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT); //Chrome
+	document.getElementById("gameCanvas")[0].mozRequestFullScreen(); //Firefox
 	});
 	stage.addChild(circle);
 
