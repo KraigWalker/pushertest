@@ -5,6 +5,5 @@ channel.bind('pusher:subscription_succeeded', function() {
 });
 	// send a message with the amount to the server
 function updateSlider() {
-	var triggered = channel.trigger('update-slider', { value: 45 });
-
+	var triggered = channel.trigger("update-slider", { value:45 });
 }
