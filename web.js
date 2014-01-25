@@ -1,7 +1,7 @@
 // web.js
 var express = require("express");
 var logfmt = require("logfmt");
-var Pusher = require('pusher');
+var Pusher = require('pusher-client');
 var app = express();
 
 var pusher = new Pusher({
