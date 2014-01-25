@@ -22,7 +22,6 @@ app.get('/', function(req, res){
 **************************************************/
 var players;	// Array of connected players
 var server = app.listen(PORT);
-server.use(express.static('/public'));
 
 /**************************************************
 ** GAME INITIALISATION
@@ -31,6 +30,10 @@ function init() {
 	console.log("starting");
 	// Create an empty array to store players
 	players = [];
+
+	app.configure(function() {
+		app.use(express.static(__dirname + '/public'));
+	});
 
 	// Set up Socket.IO to listen on port 8000
 	io = io.listen(server);
