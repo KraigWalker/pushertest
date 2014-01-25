@@ -182,8 +182,6 @@ function draw() {
 	// Wipe the canvas clean
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-	stage.update();
-
 	// Draw the local player
 	localPlayer.draw(ctx);
 
