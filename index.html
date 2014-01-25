@@ -5,8 +5,12 @@
 	<title>Document</title>
 </head>
 <body>
-
 	<h1>Hiya Person</h1>
+	<br/>
+	<div id="slider">
+	0.0<input id="slide" type="range" min="0.0" max="1.0" step="0.1" value="0"
+		onchange="updateSlider(this.value)" />1.0
+	</div>
 	<script src="http://js.pusher.com/2.1/pusher.min.js"></script>
 	<script>
 	var pusher = new Pusher('5f0a592328baabc35293');
