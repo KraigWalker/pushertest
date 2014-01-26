@@ -8,17 +8,22 @@
 
 		<link rel="stylesheet" href="style/reset.css">
 		<link rel="stylesheet" href="style/game.css">
+		<link rel="stylesheet" href="style/animate.css">
+		<link rel="stylesheet" href="style/utility.css">
 	</head>
 
-	<body>
-		<canvas id="gameCanvas"></canvas>
-		<script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
-		<script src="http://mighty-escarpment-2260.herokuapp.com/socket.io/socket.io.js"></script>
-		<script src="js/requestAnimationFrame.js"></script>
-		<script src="js/Keys.js"></script>
-		<script src="js/Player.js"></script>
-		<script src="js/game.js"></script>
+	<body class="canvas-bg">
+		<h1>Hiya</h1>
 		<script>
+		var ctx = document.getCSSCanvasContext('2d', 'animation', window.innerWidth, window.innerHeight);
+		</script>
+		<script src="http://code.createjs.com/easeljs-0.7.1.min.js"></script>
+		<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+		<script src="js/requestAnimationFrame.js"></script>
+		 <script src="js/Keys.js"></script>
+		 <script src="js/Player.js"></script>
+		 <script src="js/game.js"></script>
+		 <script>
 			// Initialise the game
 			init();
 			animate();

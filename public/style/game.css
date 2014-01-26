@@ -1,7 +1,22 @@
-body {
-	overflow: hidden;
+#gamecontainer {
+    background-color: #fff;
+    position: relative;
+    margin: 0 auto; }
+
+canvas{ position: absolute; z-index: 1 }
+
+#gamestartscreen {
+    position: absolute;
+    margin: 0 auto;
+    z-index: 2;
+    background: red;
 }
 
-canvas {
-	display: block;
+h1 {
+	text-align: center;
+}
+
+
+.body {
+  background: -webkit-canvas(canvas) no-repeat 50% 50%;
 }
